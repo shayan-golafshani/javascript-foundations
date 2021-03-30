@@ -19,7 +19,7 @@ class Hobbit {
     }
     else {
       this.old = true;
-    }
+    
   }
   getRing(){
     if(this.name !== 'Frodo'){

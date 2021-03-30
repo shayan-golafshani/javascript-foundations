@@ -4,11 +4,13 @@ class Unicorn {
     this.color = color || 'white';
   }
   isWhite(){
-    if(this.color !== 'white'){
-      return false
-    } else {
-      return true;
-    }
+    // if(this.color !== 'white'){
+    //   return false
+    // } else {
+    //   return true;
+    // }
+
+  return this.color !== 'white' ? false : true
   }
   says(string){
     return `**;* ${string} *;**`

@@ -2,10 +2,12 @@ class Fairy{
   constructor(name){
     this.name = name;
     this.dust = 10;
-    this.disposition = 'Good natured'
+    this.disposition = 'Good natured';
     this.clothes = {
       dresses: ['Iris']
     }
+    this.humanWards = [];
+    this.stolenInfantCount = 0;
   }
 
   receiveBelief(){
@@ -17,7 +19,7 @@ class Fairy{
   }
 
   becomeProvoked(){
-    this.disposition = "Vengeful"
+    this.disposition = "Vengeful";
   }
 
   makeDresses(flowers){
@@ -29,12 +31,23 @@ class Fairy{
   }
 
   replaceInfant(infant){
-    if(this.disposition === 'Vengeful'){
-      console.log('nothin')
-      infant.disposition = 'Malicious'
-      return infant;
-    } else if (this.disposition !== 'Vengeful') {
 
+
+    if (this.disposition !== 'Vengeful') {
+        return infant;
+    } else {
+
+      this.stolenInfantCount++;
+      
+      if(this.stolenInfantCount > 2){
+        this.disposition = 'Good natured';
+        this.stolenInfantCount = 0;
+      }
+
+      infant.disposition = 'Malicious';
+      this.humanWards.push(infant);
+
+      return infant;
     }
   }
 

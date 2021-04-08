@@ -3,14 +3,16 @@ class Human {
     //key-value pairs:
     this.name = name;
     this.encounterCounter = 0;
+    this.knockedOut = false;
   }
   //methods:
   noticesOgre() {
-    if (this.encounterCounter / 3 === 1) {
-      return true;
-    } else if (this.encounterCounter / 6 === 1) {
+    console.log("Before Conditional" + this.encounterCounter)
+    if (this.encounterCounter === 3 || this.encounterCounter === 6) {
+      console.log("IF Conditional" + this.encounterCounter)
       return true;
     } else {
+      console.log("Else Conditional" + this.encounterCounter)
       return false;
     }
   }
